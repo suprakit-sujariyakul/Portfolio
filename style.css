@@ -1,0 +1,592 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+    color: whitesmoke;
+}
+
+h1 {
+    font-family: 'Stick No Bills', sans-serif;
+}
+
+em {
+    font-style: normal;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(19, 19, 19);
+    z-index: 99;
+    padding: 0.5vw 0;
+    font-size: 1vw;
+}
+
+.menu a {
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 0 1vw;
+    opacity: 0.3;
+    transition-duration: 0.5s;
+}
+
+.menu a:hover {
+    opacity: 1;
+    transition-duration: 0.5s;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/2109.jpg);
+    background-position: center top;
+    background-size: cover;
+    height: 100vh;
+}
+
+.name {
+    font-size: 6vw;
+    text-transform: uppercase;
+    letter-spacing: 1vw;
+    text-shadow: 1px 3px 11px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    margin: 0;
+}
+
+.motto {
+    margin-top: 0.5vw;
+    margin-bottom: 13vw;
+    padding: 0 10%;
+    font-style: normal;
+    font-size: 1.5vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    text-align: center;
+}
+
+.scroll-icon,
+.scroll-icon::before {
+    position: absolute;
+    left: 50%;
+}
+
+.scroll-icon {
+    width: 1.5vw;
+    height: 3vw;
+    margin-left: -0.75vw;
+    top: 93%;
+    margin-top: -1.5vw;
+    box-shadow: inset 0 0 0 0.1vw rgba(245, 245, 245, 0.3);
+    border-radius: 5vw;
+    transition-duration: 0.5s;
+}
+
+.scroll-icon:before {
+    content: '';
+    width: 0.4vw;
+    height: 0.4vw;
+    background: rgba(245, 245, 245, 0.3);
+    margin-left: -0.2vw;
+    top: 0.4vw;
+    border-radius: 10vw;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+    transition-duration: 0.5s;
+}
+
+.scroll-icon:hover {
+    box-shadow: inset 0 0 0 0.1vw rgba(245, 245, 245, 1);
+    transition-duration: 0.5s;
+}
+
+.scroll-icon:hover:before {
+    background: rgba(245, 245, 245, 1);
+    transition-duration: 0.5s;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(1.5vw);
+    }
+}
+
+h2 {
+    font-family: 'Abel', sans-serif;
+    text-align: center;
+    padding-top: 3vw;
+    font-size: 3vw;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.project {
+    text-decoration: none;
+    color: whitesmoke;
+    width: 30%;
+    border-radius: 1vw;
+    overflow: hidden;
+    background-color: rgb(39, 39, 39);
+}
+
+.project-img {
+    width: 100%;
+    height: 20vw;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition-duration: 1s;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: center;
+}
+
+.horizontal img {
+    width: auto;
+    height: 100%;
+}
+
+.project-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 0 1vw;
+    padding-top: 1vw;
+}
+
+.project-description,
+.project-view {
+    padding: 0 1vw;
+    font-size: 1vw;
+    transition-duration: 0.5s;
+}
+
+.project-view {
+    opacity: 0;
+}
+
+.project:hover .project-img img {
+    filter: grayscale(0%);
+    transition-duration: 1s;
+}
+
+.project:hover .project-description {
+    transform: translateY(-1vw);
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+
+.project:hover .project-view {
+    transform: translateY(-1vw);
+    opacity: 1;
+    transition-duration: 0.5s;
+}
+
+.experience-container {
+    margin: 0 15%;
+}
+
+.experience-headline {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 1vw;
+    padding-left: 2vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 1vw;
+    background-color: rgb(39, 39, 39);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+}
+
+.experience-headline>div:nth-child(4) {
+    margin-left: auto;
+}
+
+.experience-headline:after {
+    content: '\02795';
+    margin-left: 1vw;
+    border-radius: 5vw;
+    padding: 0.5vw;
+    transition-duration: 0.5s;
+}
+
+.experience-headline:hover:after {
+    background-color: rgb(59, 59, 59);
+}
+
+.experience-headline.active:after {
+    content: "\2796";
+}
+
+.experience-headline.active {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.experience-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 2vw;
+    margin: 1vw 0;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+}
+
+.experience-description {
+    font-size: 1vw;
+    width: 80%;
+}
+
+.experience-description>div:first-child {
+    color: rgba(245, 245, 245, 0.3);
+    display: flex;
+}
+
+.experience-description>div:first-child>a {
+    text-decoration: none;
+    color: rgba(245, 245, 245, 0.3);
+    margin-right: 2vw;
+}
+
+.experience-description>div:first-child>a:hover {
+    color: rgba(245, 245, 245, 1);
+    transition-duration: 0.5s;
+}
+
+.experience-description ul {
+    margin: 0.5vw 0;
+    line-height: 1.5vw;
+    padding-right: 1.5vw;
+}
+
+.experience-skill {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.experience-skill>div {
+    padding: 0.5vw 1vw;
+    margin-top: 0.5vw;
+    margin-right: 0.5vw;
+    border-radius: 5vw;
+    border: 0.1vw solid rgba(245, 245, 245, 0.3);
+}
+
+.experience-logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experience-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20%;
+    margin-top: 6vw;
+    padding: 3vw 0;
+    align-items: center;
+    border-top: 0.1vw solid rgba(245, 245, 245, 0.3);
+}
+
+#contact>div:nth-child(1) {
+    padding-right: 3vw;
+}
+
+#contact h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#contact a {
+    text-decoration: none;
+    font-size: 1vw;
+    color: rgba(245, 245, 245, 0.3);
+    margin: 0 1vw;
+    transition-duration: 0.5s;
+}
+
+#contact a:hover {
+    color: rgba(245, 245, 245, 1);
+}
+
+@media (max-width: 1200px) {
+    .menu {
+        font-size: 1.2vw;
+    }
+
+    .name {
+        font-size: 6.5vw;
+    }
+
+    h2 {
+        font-size: 4vw;
+    }
+
+    .project-name {
+        font-size: 1.8vw;
+    }
+
+    .project-description,
+    .project-view {
+        font-size: 1.2vw;
+    }
+
+    .experience-container {
+        margin: 0 10%;
+    }
+
+    .experience-headline {
+        font-size: 1.8vw;
+    }
+
+    .experience-description {
+        font-size: 1.2vw;
+    }
+
+    svg {
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+
+    #contact a {
+        font-size: 1.2vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .menu {
+        font-size: 1.4vw;
+    }
+
+    .name {
+        font-size: 6.5vw;
+    }
+
+    .motto {
+        margin-bottom: 15vw;
+    }
+
+    h2 {
+        font-size: 4.5vw;
+    }
+
+    .project-name {
+        font-size: 2vw;
+    }
+
+    .project-description,
+    .project-view {
+        font-size: 1.4vw;
+    }
+
+    .experience-description ul {
+        margin-top: 1vw;
+    }
+
+    #contact a {
+        font-size: 1.4vw;
+    }
+
+    .scroll-icon {
+        width: 2vw;
+        height: 3.5vw;
+        margin-left: -1vw;
+        top: 94%;
+        margin-top: -1.75vw;
+    }
+
+    .scroll-icon:before {
+        width: 0.5vw;
+        height: 0.5vw;
+        margin-left: -0.25vw;
+        top: 0.5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        font-size: 1.6vw;
+    }
+
+    .project-description,
+    .project-view {
+        font-size: 1.6vw;
+    }
+
+    #contact a {
+        font-size: 1.6vw;
+    }
+}
+
+@media (max-width:600px) {
+    .menu {
+        font-size: 2.5vw;
+    }
+
+    .name {
+        font-size: 12vw;
+        letter-spacing: 2vw;
+        line-height: 12vw;
+    }
+
+    .motto {
+        margin-top: 3vw;
+        font-size: 3vw;
+        margin-bottom: 40vw;
+    }
+
+    .scroll-icon {
+        width: 3.5vw;
+        height: 6vw;
+        margin-left: -1.75vw;
+        top: 95%;
+        margin-top: -3vw;
+        box-shadow: inset 0 0 0 0.2vw rgba(245, 245, 245, 0.3);
+    }
+
+    .scroll-icon:before {
+        width: 1vw;
+        height: 1vw;
+        margin-left: -0.5vw;
+        top: 1.5vw;
+    }
+
+    .scroll-icon:hover {
+        box-shadow: inset 0 0 0 0.2vw rgba(245, 245, 245, 1);
+        transition-duration: 1s;
+    }
+
+    @keyframes scroll {
+        100% {
+            opacity: 0;
+            transform: translateY(2vw);
+        }
+    }
+
+    h2 {
+        font-size: 8vw;
+    }
+
+    .project-name {
+        font-size: 4vw;
+        padding: 0 3vw;
+        padding-top: 3vw;
+    }
+
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 80%;
+        margin-bottom: 5vw;
+        border-radius: 5vw;
+    }
+
+    .project-img {
+        height: 60vw;
+    }
+
+    .project-description,
+    .project-view {
+        font-size: 2.5vw;
+        padding: 0 3vw;
+    }
+
+    .experience-headline {
+        font-size: 4vw;
+        display: inline;
+    }
+
+    .experience-headline>em:nth-child(1) {
+        display: block;
+    }
+
+    .experience-headline>div:nth-child(4) {
+        margin-top: 2vw;
+        font-size: 3vw;
+    }
+
+    .experience-headline:after {
+        display: none;
+    }
+
+    button {
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    .experience-headline.active {
+        background-color: rgb(39, 39, 39);
+        color: whitesmoke;
+    }
+
+    .experience-content {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .experience-logo {
+        display: none;
+    }
+
+    .experience-description {
+        width: 100%;
+        font-size: 2.5vw;
+        margin-bottom: 5vw;
+    }
+
+    .experience-description>div:nth-child(1) {
+        flex-wrap: wrap;
+    }
+
+    .experience-description ul {
+        line-height: 3vw;
+        padding-left: 8vw;
+    }
+
+    #contact a {
+        font-size: 2vw;
+    }
+}
